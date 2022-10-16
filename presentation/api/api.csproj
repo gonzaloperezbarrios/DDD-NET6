@@ -12,6 +12,5 @@
   <ItemGroup>
     <ProjectReference Include="..\..\exampleContext\application\application.csproj" />
     <ProjectReference Include="..\..\exampleContext\infraestructure\infraestructure.csproj" />
-    <ProjectReference Include="..\..\exampleContext\domain\domain.csproj" />
   </ItemGroup>
 </Project>
