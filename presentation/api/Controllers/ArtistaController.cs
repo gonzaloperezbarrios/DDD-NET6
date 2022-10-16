@@ -4,6 +4,7 @@ using application.services;
 using api.Dtos;
 using api.entities;
 using domain.value_objects;
+using Newtonsoft.Json;
 
 namespace api.Controllers;
 
@@ -28,9 +29,10 @@ public class ArtistaController : ControllerBase
     }
 
     [HttpPost]
-    public ActionResult<ArtistaVentaVO> post(ArtistaDto request)
+    public ActionResult post(ArtistaDto request)
     {
         ArtistaVentaVO artista = this.artistaService.create(_mapper.Map<ArtistaEntity>(request));
-        return Ok(artista.ToString());
+        string json = JsonConvert.SerializeObject(artista, Formatting.Indented);
+        return Ok(json);
     }
 }

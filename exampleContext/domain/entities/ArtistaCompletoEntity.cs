@@ -1,10 +1,10 @@
 namespace domain.entities;
 
-public class ArtistaCompletoEntity
+public record ArtistaCompletoEntity
 {
-    public string id { get; set; }
-    public string nombreArtista { get; set; }
-    public string nombreDisco { get; set; }
-    public int publicacion { get; set; }
-    public string auditoria { get; set; }
+    public string id ;
+    public string nombreArtista ;
+    public string nombreDisco ;
+    public int publicacion ;
+    public string auditoria ;
 }
