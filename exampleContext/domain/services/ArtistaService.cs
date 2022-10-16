@@ -1,3 +1,4 @@
+using domain.contracts;
 using domain.entities;
 using domain.value_objects;
 
@@ -5,16 +6,26 @@ namespace domain.services;
 
 public class ArtistaService : IArtistaService
 {
+    private readonly IArtistaRepository artistaRepository;
+
+    public ArtistaService(IArtistaRepository artistaRepository)
+    {
+        this.artistaRepository = artistaRepository;
+    }
+
     public ArtistaVentaVO create(ArtistaCompletoEntity artistaCompleto)
     {
-        return new ArtistaVentaVO
+        artistaCompleto = artistaCompleto with { auditoria = "Admin" };
+        if (!this.artistaRepository.create(artistaCompleto))
         {
-            id = artistaCompleto.id,
-            nombreArtista = artistaCompleto.nombreArtista,
-            nombreDisco = artistaCompleto.nombreDisco,
-            publicacion = artistaCompleto.publicacion,
-            auditoria = "Admin",
-            ventas = artistaCompleto.publicacion * 2 
-        };
+            throw new Exception("No guardo en la fuente datos");
+        }
+        return new ArtistaVentaVO(artistaCompleto.id
+       , artistaCompleto.nombreArtista
+       , artistaCompleto.nombreDisco
+       , artistaCompleto.publicacion
+       , artistaCompleto.auditoria
+       , artistaCompleto.publicacion * 2
+       );
     }
 }

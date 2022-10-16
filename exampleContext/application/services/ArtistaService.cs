@@ -19,15 +19,8 @@ public class ArtistaService : IArtistaService
 
     public ArtistaVentaVO create(ArtistaEntity artista)
     {
-        ArtistaEntity _artista = new ArtistaEntity
-        {
-            id = Guid.NewGuid().ToString(),
-            nombreArtista = artista.nombreArtista,
-            nombreDisco = artista.nombreDisco,
-            publicacion = artista.publicacion
-        };
-
-        ArtistaCompletoEntity artistaCompleto=_mapper.Map<ArtistaCompletoEntity>(_artista);
+        artista = artista with { id = Guid.NewGuid().ToString() };
+        ArtistaCompletoEntity artistaCompleto = _mapper.Map<ArtistaCompletoEntity>(artista);
         ArtistaVentaVO artistaVenta = this.artistaDomainService.create(artistaCompleto);
         return artistaVenta;
     }

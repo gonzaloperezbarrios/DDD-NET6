@@ -11,6 +11,7 @@ public class MappingProfile : Profile
     {
         CreateMap<ArtistaDto, ArtistaEntity>();
         CreateMap<ArtistaEntity, ArtistaDto>();
+
         CreateMap<ArtistaEntity, ArtistaCompletoEntity>();
         CreateMap<ArtistaCompletoEntity, ArtistaEntity>();
     }

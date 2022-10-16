@@ -2,7 +2,4 @@ using domain.entities;
 
 namespace domain.value_objects;
 
-public record ArtistaVentaVO : ArtistaCompletoEntity
-{
-    public decimal ventas ;
-}
+public record ArtistaVentaVO(string id, string nombreArtista, string nombreDisco, int publicacion, string auditoria, decimal ventas);

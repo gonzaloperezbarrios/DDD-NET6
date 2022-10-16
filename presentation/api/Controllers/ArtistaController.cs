@@ -22,12 +22,6 @@ public class ArtistaController : ControllerBase
         this.artistaService = artistaService;
     }
 
-    [HttpGet]
-    public ArtistaDto get()
-    {
-        return new ArtistaDto();
-    }
-
     [HttpPost]
     public ActionResult post(ArtistaDto request)
     {
