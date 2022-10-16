@@ -2,7 +2,7 @@ namespace api.Dtos;
 
 public class ArtistaDto
 {
-    public string nombreArtista { get; set; }
-    public string nombreDisco { get; set; }
-    public int publicacion { get; set; }
+    public string NombreArtista { get; set; }
+    public string NombreDisco { get; set; }
+    public int Publicacion { get; set; }
 }

@@ -19,7 +19,7 @@ public class ArtistaService : IArtistaService
 
     public ArtistaVentaVO create(ArtistaEntity artista)
     {
-        artista = artista with { id = Guid.NewGuid().ToString() };
+        artista = artista with { Id = Guid.NewGuid().ToString() };
         ArtistaCompletoEntity artistaCompleto = _mapper.Map<ArtistaCompletoEntity>(artista);
         ArtistaVentaVO artistaVenta = this.artistaDomainService.create(artistaCompleto);
         return artistaVenta;

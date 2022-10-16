@@ -15,17 +15,17 @@ public class ArtistaService : IArtistaService
 
     public ArtistaVentaVO create(ArtistaCompletoEntity artistaCompleto)
     {
-        artistaCompleto = artistaCompleto with { auditoria = "Admin" };
+        artistaCompleto = artistaCompleto with { Auditoria = "Admin" };
         if (!this.artistaRepository.create(artistaCompleto))
         {
             throw new Exception("No guardo en la fuente datos");
         }
-        return new ArtistaVentaVO(artistaCompleto.id
-       , artistaCompleto.nombreArtista
-       , artistaCompleto.nombreDisco
-       , artistaCompleto.publicacion
-       , artistaCompleto.auditoria
-       , artistaCompleto.publicacion * 2
+        return new ArtistaVentaVO(artistaCompleto.Id
+       , artistaCompleto.NombreArtista
+       , artistaCompleto.NombreDisco
+       , artistaCompleto.Publicacion
+       , artistaCompleto.Auditoria
+       , artistaCompleto.Publicacion * 2
        );
     }
 }

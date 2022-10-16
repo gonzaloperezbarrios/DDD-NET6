@@ -2,8 +2,8 @@ namespace api.entities;
 
 public record ArtistaEntity
 {
-    public string id ;
-    public string nombreArtista ;
-    public string nombreDisco ;
-    public int publicacion ;
+    public string Id { get; set; }
+    public string NombreArtista { get; set; }
+    public string NombreDisco { get; set; }
+    public int Publicacion { get; set; }
 }
