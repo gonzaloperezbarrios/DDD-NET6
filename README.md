@@ -1,4 +1,5 @@
-## Explicación del codigo
+## Explicación del código 
+### DDD en .NET 6
 
 [![video-youtube](__doc__/miniatura.png)](https://youtu.be/OAhlVeLtUbI)
 
